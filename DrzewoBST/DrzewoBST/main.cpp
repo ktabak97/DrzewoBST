@@ -1,8 +1,6 @@
 #include "Header.h"
 
 
-
-
 void doOperation(struct node *root, string instruction, int number)
 {
 	if (instruction == "add")
@@ -54,22 +52,19 @@ bool loadFile(struct node *root, string fileName)
 	return true;
 }
 
-void safeFile(node *root) {
-	string linia;
-	fstream sfile;
-
-	sfile.open("safe.txt", ios::out | ios::trunc);
-	if (sfile.good() == true)
+void saveFile(node *root) {
+	ofstream out;
+	out.open("save.txt", ios::out | ios::app);
+	if (out.good() == true)
 	{
-		if (root != NULL)
+		if (root != NULL) 
 		{
-			safeFile(root->left);
-			sfile << root->key << endl;
-			safeFile(root->right);
+			saveFile(root->left);
+			out << root->key << "  ";
+			saveFile(root->right);
 		}
-
-		sfile.close();
 	}
+	out.close();
 }
 
 
@@ -82,7 +77,8 @@ int main()
 	if (!loadFile(root,"data.txt"))
 		std::cout << "Error, cant open file" << std::endl;
 	paint(root, 0);
-	safeFile(root);
+	saveFile(root);
+	getchar();
 	return 0;
 
 }

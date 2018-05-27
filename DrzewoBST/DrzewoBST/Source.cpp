@@ -4,7 +4,8 @@ struct node *newNode(int value)
 {
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
 	temp->key = value;
-	temp->left = temp->right = NULL;
+	temp->left = NULL;
+	temp->right = NULL;
 	return temp;
 }
 

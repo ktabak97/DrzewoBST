@@ -22,7 +22,6 @@ struct node * findMinNode(struct node* node);
 struct node * findMaxNode(struct node* node);
 struct node* deleteNode(struct node* root, int key);
 void paint(node *root, int distance);
-void safeFile(node *root);
 
 
 
