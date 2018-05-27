@@ -8,7 +8,7 @@
 
 using namespace std;
 
-struct node
+struct node //struktura wezla
 {
 	int key;
 	struct node *left, *right;

@@ -1,6 +1,6 @@
 #include "Header.h"
 
-struct node *newNode(int value)
+struct node *newNode(int value) //struktura nowego wezla
 {
 	struct node *temp = (struct node *)malloc(sizeof(struct node));
 	temp->key = value;
@@ -9,7 +9,7 @@ struct node *newNode(int value)
 	return temp;
 }
 
-void display(struct node *root)
+void display(struct node *root) //wyswietlanie proste
 {
 	if (root != NULL)
 	{
@@ -19,7 +19,7 @@ void display(struct node *root)
 	}
 }
 
-struct node * findMinNode(struct node* node)
+struct node * findMinNode(struct node* node) //szukanie najmniejszego elementu
 {
 	struct node* seek = node;
 
@@ -30,7 +30,7 @@ struct node * findMinNode(struct node* node)
 	return seek;
 }
 
-struct node * findMaxNode(struct node* node)
+struct node * findMaxNode(struct node* node) //szukanie najwiekszego elementu
 {
 	struct node* seek = node;
 
@@ -42,7 +42,7 @@ struct node * findMaxNode(struct node* node)
 }
 
 
-struct node* add(struct node* node, int key)
+struct node* add(struct node* node, int key) //dodawanie elementu
 {
 	if (node == NULL) return newNode(key);
 
@@ -54,7 +54,7 @@ struct node* add(struct node* node, int key)
 	return node;
 }
 
-struct node* deleteNode(struct node* root, int key)
+struct node* deleteNode(struct node* root, int key) //usuwanie elementu
 {
 	if (root == NULL) return root;
 
@@ -85,7 +85,7 @@ struct node* deleteNode(struct node* root, int key)
 	}
 	return root;
 }
-void paint(struct node *root, int distance)
+void paint(struct node *root, int distance) //wyswietlanie graficzne
 {
 	int place = 10;
 

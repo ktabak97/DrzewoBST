@@ -1,7 +1,7 @@
 #include "Header.h"
 
 
-void doOperation(struct node *root, string instruction, int number)
+void doOperation(struct node *root, string instruction, int number) //funkcja obslugujaca wywolywanie funkcji w pliku wejsciowym
 {
 	if (instruction == "add")
 	{
@@ -29,7 +29,7 @@ void doOperation(struct node *root, string instruction, int number)
 	}
 }
 
-bool loadFile(struct node *root, string fileName)
+bool loadFile(struct node *root, string fileName) //ladowanie pliku wejsciowego
 {
 	ifstream file;
 	file.open(fileName.c_str());
@@ -52,7 +52,8 @@ bool loadFile(struct node *root, string fileName)
 	return true;
 }
 
-void saveFile(node *root) {
+void saveFile(node *root) //zapisywanie do pliku
+{
 	ofstream out;
 	out.open("save.txt", ios::out | ios::app);
 	if (out.good() == true)
